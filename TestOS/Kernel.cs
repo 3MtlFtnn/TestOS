@@ -23,10 +23,15 @@ namespace TestOS
         protected override void Run()
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
+
             Console.Write("Input: ");
 
             String input;
             input = this.ComManager.proccesInput(Console.ReadLine());
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(input);
+            Console.ResetColor();
+            /*
             switch (input)
             {
                 default:
@@ -71,8 +76,8 @@ namespace TestOS
                     Console.WriteLine("MEM: " + (ram_cap) + "MB");
                     break;
 
-            }
-            
+            } */
+
         }
     }
 }

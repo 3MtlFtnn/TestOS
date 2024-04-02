@@ -13,6 +13,8 @@ namespace TestOS.Commands
         public ComManager() { 
             this.commands = new List<Command>();
             this.commands.Add(new Help("/help"));
+            this.commands.Add(new Info("/info"));
+            
         }
 
         public String proccesInput (String input)

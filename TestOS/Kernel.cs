@@ -3,26 +3,30 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using Sys = Cosmos.System;
+using Cosmos.System.Graphics;
 using System.Threading;
+using TestOS.Commands;
 
 namespace TestOS
 {
     public class Kernel : Sys.Kernel
     {
-
+        private ComManager ComManager;
         protected override void BeforeRun()
         {
             Console.Clear();
             Console.WriteLine("Cosmos booted successfully. Type a line of text to get it echoed back.");
+            this.ComManager = new ComManager();
 
         }
 
         protected override void Run()
         {
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.Write("Input: ");
 
-            var input = Console.ReadLine();
+            String input;
+            input = this.ComManager.proccesInput(Console.ReadLine());
             switch (input)
             {
                 default:
@@ -46,6 +50,14 @@ namespace TestOS
                     }
                  
                     Sys.Power.Shutdown();
+                    break;
+                case "reboot":
+                    for(int i = 3; i>0; i--)
+                    {
+                        Console.WriteLine("System will by shutdown by " + i);
+                        Thread.Sleep(1000);
+                    }
+                    Sys.Power.Reboot();
                     break;
                 case "clear":
                     Console.Clear();

@@ -15,7 +15,7 @@ namespace TestOS
         protected override void BeforeRun()
         {
             Console.Clear();
-            Console.WriteLine("Cosmos booted successfully. Type a line of text to get it echoed back.");
+            Console.WriteLine("Booted successfully.");
             this.ComManager = new ComManager();
 
         }
@@ -24,15 +24,13 @@ namespace TestOS
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
 
-            Console.Write("Input: ");
+            Console.Write("~ ");
 
             String input;
             input = this.ComManager.proccesInput(Console.ReadLine());
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(input);
             Console.ResetColor();
-            
-
         }
     }
 }

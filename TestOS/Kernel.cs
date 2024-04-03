@@ -24,7 +24,7 @@ namespace TestOS
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
 
-            Console.Write("~ ");
+            Console.Write("~  ");
 
             String input;
             input = this.ComManager.proccesInput(Console.ReadLine());

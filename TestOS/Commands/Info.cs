@@ -20,7 +20,7 @@ namespace TestOS.Commands
 
         public override String run(String[] args)
         {
-            String info = "CPU: "+ Cosmos.Core.CPU.GetCPUVendorName() + "\n";
+            String info = "CPU: "+ Cosmos.Core.CPU.GetCPUBrandString() + "\n";
             //info = info + "MEM: "+ Cosmos.Core.CPU.GetAmountOfRAM() + "MB \n";
 
             return info;

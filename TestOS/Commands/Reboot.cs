@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace TestOS.Commands
 {
-    public class Help : Command
+    internal class Reboot : Command
     {
-        public Help (String name) : base (name) { }
+        public Reboot(String name) : base (name){ }
 
         public override String run(string[] args)
         {
-            return "This it help command! Avalible commands:\n /info";
+            Cosmos.System.Power.Reboot();
+            return "";
 
         }
     }

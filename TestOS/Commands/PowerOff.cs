@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace TestOS.Commands
 {
-    public class Help : Command
+    internal class PowerOff : Command
     {
-        public Help (String name) : base (name) { }
+        public PowerOff(String name) : base(name) { }
 
         public override String run(string[] args)
         {
-            return "This it help command! Avalible commands:\n /info";
-
+            Cosmos.System.Power.Shutdown();
+            return "";
         }
     }
 }
+

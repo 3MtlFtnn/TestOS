@@ -14,6 +14,8 @@ namespace TestOS.Commands
             this.commands = new List<Command>();
             this.commands.Add(new Help("/help"));
             this.commands.Add(new Info("/info"));
+            this.commands.Add(new PowerOff("/poweroff"));
+            this.commands.Add(new Reboot("/reboot"));
             
         }
 

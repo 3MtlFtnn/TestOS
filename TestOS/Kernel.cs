@@ -22,18 +22,20 @@ namespace TestOS
             Console.Clear();
             Console.WriteLine("Booted successfully.");
             this.ComManager = new ComManager();
+            /*
             var available_space = vfs.GetAvailableFreeSpace(@"0:\");
             var fs_type = vfs.GetFileSystemType(@"0:\");
             Console.WriteLine("File System Type: " + fs_type);
             Console.WriteLine("Available Free Space: " + available_space);
-
+            */
+            
         }
 
         protected override void Run()
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
 
-            Console.Write("~  ");
+            Console.Write("~ ");
 
             String input;
             input = this.ComManager.proccesInput(Console.ReadLine());

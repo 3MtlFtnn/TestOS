@@ -42,7 +42,7 @@ namespace TestOS.Commands
             {
                 if (cmd.name == task) { return cmd.run(args.ToArray()); }
             }
-
+            //Console.ForegroundColor = ConsoleColor.Red;
             return "Unknown command: "+task;
         }
     }

@@ -7,6 +7,7 @@ using Cosmos.System.Graphics;
 using System.Threading;
 using TestOS.Commands;
 using Cosmos.System.FileSystem;
+using System.IO;
 
 namespace TestOS
 {
@@ -33,9 +34,10 @@ namespace TestOS
 
         protected override void Run()
         {
+            
             Console.ForegroundColor = ConsoleColor.Magenta;
-
-            Console.Write("~ ");
+            String cur_dir = Directory.GetCurrentDirectory(); 
+            Console.Write(cur_dir);
 
             String input;
             input = this.ComManager.proccesInput(Console.ReadLine());

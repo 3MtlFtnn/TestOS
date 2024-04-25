@@ -67,6 +67,17 @@ namespace TestOS.Commands
                         break;
                     }
                     break;
+                case "ls":
+                    try
+                    {
+                        //String list_file = Directory.
+                    }
+                    catch (Exception e)
+                    {
+                        return_ = e.ToString();
+                        break;
+                    }
+                    break;
                 case "wi":
                     try
                     {

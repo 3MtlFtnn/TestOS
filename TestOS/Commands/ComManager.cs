@@ -17,6 +17,7 @@ namespace TestOS.Commands
             this.commands.Add(new PowerOff("/poweroff"));
             this.commands.Add(new Reboot("/reboot"));
             this.commands.Add(new File("/file"));
+            this.commands.Add(new Clear("clear"));
             
         }
 

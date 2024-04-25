@@ -15,11 +15,16 @@ namespace TestOS
     {
         private ComManager ComManager;
         private CosmosVFS vfs;
-       
+        string cur_dir = @"0:\";
+
+
         protected override void BeforeRun()
         {
+            long cpu_freq = Cosmos.Core.CPU.GetCPUCycleSpeed();
+            Console.WriteLine($"CPU: {cpu_freq}");
             this.vfs = new CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(this.vfs);
+            //vfs.Initialize(true);
             Console.Clear();
             Console.WriteLine("Booted successfully.");
             this.ComManager = new ComManager();
@@ -31,14 +36,22 @@ namespace TestOS
             */
             
         }
+        private string[] GetDirFadr(string adr) // get directories From address
+        {
+
+            var dirs = Directory.GetDirectories(adr);
+
+            return dirs;
+
+        }
 
         protected override void Run()
         {
             
             Console.ForegroundColor = ConsoleColor.Magenta;
-            String cur_dir = Directory.GetCurrentDirectory(); 
-            Console.Write(cur_dir);
-
+            string[] dirs = GetDirFadr(cur_dir); // get curent dir
+            Console.Write(cur_dir + "> ");
+            
             String input;
             input = this.ComManager.proccesInput(Console.ReadLine());
             Console.ForegroundColor = ConsoleColor.White;

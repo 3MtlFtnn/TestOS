@@ -17,6 +17,9 @@ namespace TestOS.Commands
             
             String cpu = "CPU: " + Cosmos.Core.CPU.GetCPUBrandString() + "\n";
             String mem = Convert.ToString(Cosmos.Core.CPU.GetAmountOfRAM()) + "MB \n";
+            
+            //наебалово, не работает
+            //String cpu_freq = Cosmos.Core.CPU.GetCPUCycleSpeed().ToString();
             String info_to_return = cpu + mem;
             return info_to_return;
         }

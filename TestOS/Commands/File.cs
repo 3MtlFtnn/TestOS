@@ -70,7 +70,11 @@ namespace TestOS.Commands
                 case "ls":
                     try
                     {
-                        //String list_file = Directory.
+                        var files_list = Directory.GetFiles(@"0:\");
+                        foreach (var file in files_list)
+                        {
+                            Console.WriteLine(file);
+                        }
                     }
                     catch (Exception e)
                     {

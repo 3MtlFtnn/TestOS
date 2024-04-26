@@ -20,11 +20,11 @@ namespace TestOS
 
         protected override void BeforeRun()
         {
-            long cpu_freq = Cosmos.Core.CPU.GetCPUCycleSpeed();
-            Console.WriteLine($"CPU: {cpu_freq}");
+
+
             this.vfs = new CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(this.vfs);
-            //vfs.Initialize(true);
+            vfs.Initialize(true);
             Console.Clear();
             Console.WriteLine("Booted successfully.");
             this.ComManager = new ComManager();
@@ -36,21 +36,22 @@ namespace TestOS
             */
             
         }
-        private string[] GetDirFadr(string adr) // get directories From address
-        {
+        //private string[] GetDirFadr(string adr) // get directories From address
+        //{
 
-            var dirs = Directory.GetDirectories(adr);
+           // string dirs = Directory.GetCurrentDirectory();
 
-            return dirs;
+            //return dirs;
 
-        }
+        //}
 
         protected override void Run()
         {
             
             Console.ForegroundColor = ConsoleColor.Magenta;
-            string[] dirs = GetDirFadr(cur_dir); // get curent dir
-            Console.Write(cur_dir + "> ");
+            //string[] dirs = Directory.(cur_dir);
+            string dirs = Directory.GetDirectoryRoot(cur_dir);
+            Console.Write(dirs + "> ");
             
             String input;
             input = this.ComManager.proccesInput(Console.ReadLine());

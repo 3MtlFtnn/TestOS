@@ -12,7 +12,7 @@ namespace TestOS.Commands
 
         public override String run(string[] args)
         {
-            return "This it help command! Avalible commands:\n /info";
+            return "This is the help command! Avalible commands:\n /info \n /file \n /reboot \n /poweroff \n clear ";
 
         }
     }

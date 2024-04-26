@@ -13,14 +13,16 @@ namespace TestOS.Commands
         private ComManager ComManager;
         private CosmosVFS vfs;
         public override String run(String[] args)
-        {  
-            
+        {
+
+            String q = "CPU Brand" + Cosmos.Core.CPU.GetCPUVendorName() + "\n";
             String cpu = "CPU: " + Cosmos.Core.CPU.GetCPUBrandString() + "\n";
             String mem = Convert.ToString(Cosmos.Core.CPU.GetAmountOfRAM()) + "MB \n";
+            String ll = "UpTime: "+ Cosmos.Core.CPU.GetCPUUptime().ToString() + "Sec\n";
             
-            //наебалово, не работает
+            //не работает
             //String cpu_freq = Cosmos.Core.CPU.GetCPUCycleSpeed().ToString();
-            String info_to_return = cpu + mem;
+            String info_to_return = cpu + mem + ll + q;
             return info_to_return;
         }
     }
